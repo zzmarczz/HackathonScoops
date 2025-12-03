@@ -14,6 +14,7 @@ import com.ciscowebex.androidsdk.kitchensink.databinding.ActivityLoginWithTokenB
 import com.ciscowebex.androidsdk.kitchensink.utils.Constants
 import com.ciscowebex.androidsdk.kitchensink.utils.showDialogWithMessage
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.appdynamics.eumagent.runtime.Instrumentation
 
 class AccessTokenLoginActivity: AppCompatActivity() {
 
@@ -38,6 +39,7 @@ class AccessTokenLoginActivity: AppCompatActivity() {
                         binding.loginButton.visibility = View.GONE
                         progressLayout.visibility = View.VISIBLE
                         val token = tokenText.text.toString()
+                        Instrumentation.setUserData("UserToken", token)
                         loginViewModel.loginWithAccessToken(token, null)
                     }
                 }

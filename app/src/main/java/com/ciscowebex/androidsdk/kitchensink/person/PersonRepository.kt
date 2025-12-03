@@ -6,6 +6,8 @@ import com.ciscowebex.androidsdk.CompletionHandler
 import com.ciscowebex.androidsdk.people.PersonRole
 import io.reactivex.Observable
 import io.reactivex.Single
+import com.appdynamics.eumagent.runtime.Instrumentation
+
 
 class PersonRepository(private val webex: Webex) {
 
@@ -15,6 +17,10 @@ class PersonRepository(private val webex: Webex) {
             webex.people.getMe(CompletionHandler { result ->
                 if (result.isSuccessful) {
                     val person = result.data
+                    val lastName = result.data!!.lastName ?: ""
+                    val status = result.data!!.status ?: ""
+                    Instrumentation.setUserData("lastname", lastName)
+                    Instrumentation.setUserData("status", status)
                     emitter.onSuccess(PersonModel.convertToPersonModel(person))
                 } else {
                     if (!emitter.isDisposed) {

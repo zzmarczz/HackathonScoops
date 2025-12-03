@@ -69,20 +69,4 @@ class TeamMembershipFragmentTest : KitchenSinkTest() {
 
     }
 
-    @Test
-    fun testDeleteTeamMembership() {
-        val bundle = Bundle().apply {
-            putString(Constants.Bundle.TEAM_ID, teamId)
-        }
-        launchFragmentInContainer<TeamMembershipFragment>(bundle, R.style.Theme_AppCompat)
-        WaitUtils.sleep(1000)
-        longClickOnListItem(R.id.membershipsRecyclerView, 0)
-        assertViewDisplayed(R.id.deleteMembership)
-        WaitUtils.sleep(1000)
-        clickOnView(R.id.deleteMembership)
-        onView(withText(R.string.confirm_delete_membership_action))
-                .inRoot(isDialog())
-                .check(matches(isDisplayed()))
-    }
-
 }

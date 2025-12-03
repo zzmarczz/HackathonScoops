@@ -13,6 +13,7 @@ import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import com.ciscowebex.androidsdk.message.RemoteFile
 import java.io.File
+import com.appdynamics.eumagent.runtime.Instrumentation
 
 class MessageViewModel(private val spaceRepo: SpacesRepository) : BaseViewModel() {
     private val tag = "MessageViewModel"

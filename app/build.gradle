@@ -1,11 +1,14 @@
 import com.ciscowebex.androidsdk.build.*
 
 apply plugin: 'com.android.application'
+apply plugin: 'adeum'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'  // Google Services plugin
 apply plugin: 'com.google.firebase.crashlytics' // Crashlytics Gradle plugin
+
+
 
 def CLIENT_ID='""'
 def CLIENT_SECRET='""'
@@ -33,6 +36,7 @@ android {
         targetSdkVersion Versions.targetSdk
         versionCode 3160000
         versionName "3.16.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -63,6 +67,7 @@ android {
     }
 
     packagingOptions {
+        exclude 'META-INF/rxjava.properties'
         jniLibs {
             pickFirsts += ['lib/armeabi-v7a/libc++_shared.so', 'lib/arm64-v8a/libc++_shared.so', 'lib/x86/libc++_shared.so', 'lib/x86_64/libc++_shared.so']
             useLegacyPackaging true
@@ -98,7 +103,7 @@ android {
             include "x86", "x86_64", "armeabi-v7a", "arm64-v8a"
 
             // Specifies that we want to also generate a universal APK that includes all ABIs.
-            universalApk true
+            universalApk false
         }
     }
     flavorDimensions 'sdktype'
@@ -128,12 +133,14 @@ android {
 
 dependencies {
     //At a time only one WebexSDK should be used.
-    //implementation 'com.ciscowebex:webexsdk:3.16.0' // For full flavor
+
+    implementation 'com.appdynamics:appdynamics-runtime:25.9.0'
+    implementation 'com.ciscowebex:webexsdk:3.16.0' // For full flavor
     //implementation 'com.ciscowebex:webexsdk-wxc:3.16.0' //For webexCalling flavor
     //implementation 'com.ciscowebex:webexsdk-meeting:3.16.0' // For meeting flavor
     //implementation 'com.ciscowebex:webexsdk-message:3.16.0' // For meeting flavor
-    implementation files('libs/WebexSDK-Wxc.aar')
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //implementation files('libs/WebexSDK-Wxc.aar')
+    //implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation Dependencies.coreKtx
     implementation Dependencies.appCompat
     implementation Dependencies.constraintLayout
@@ -172,4 +179,13 @@ dependencies {
     implementation 'com.orhanobut:logger:2.2.0'
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
     implementation 'com.squareup.okio:okio:3.2.0'
+
+
+}
+
+adeum { // this section added for AppDynamics
+    account {
+        name 'AppdynamicsInca0Q2H00000K7Qy2UAF'
+        licenseKey '084deae9-51b1-4e34-95f0-c5b6fbacfae8'
+    }
 }

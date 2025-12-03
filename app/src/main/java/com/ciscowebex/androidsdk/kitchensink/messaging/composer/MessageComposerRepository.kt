@@ -8,14 +8,17 @@ import com.ciscowebex.androidsdk.CompletionHandler
 import com.ciscowebex.androidsdk.utils.EmailAddress
 import io.reactivex.Observable
 import io.reactivex.Single
+import com.appdynamics.eumagent.runtime.Instrumentation
 
 
 open class MessageComposerRepository(private val webex: Webex) {
 
     fun postToSpace(spaceId: String, message: Message.Text, mentions: ArrayList<Mention>?, files: ArrayList<LocalFile>?): Observable<Message> {
+        Instrumentation.setUserData("messageSent", message.toString())
         return Single.create<Message> { emitter ->
             webex.messages.postToSpace(spaceId, message, mentions, files, CompletionHandler { result ->
                 if (result.isSuccessful) {
+                    val sentMessage = result.data
                     emitter.onSuccess(result.data!!)
                 } else {
                     if (!emitter.isDisposed) {

@@ -14,7 +14,6 @@ data class SpaceMessageModel(val spaceId: String, val messageId: String, val mes
     var mMessage: Message? = null
     companion object {
         fun convertToSpaceMessageModel(message: Message?): SpaceMessageModel {
-
             val model = SpaceMessageModel(message?.getSpaceId().orEmpty(), message?.getId().orEmpty(), message?.getTextAsObject()?: Message.Text(),
                     message?.getCreated() ?: 0, message?.isSelfMentioned() ?: false, message?.getParentId().orEmpty(),
                     message?.isReply() ?: false, SpaceType.valueOf(message?.getSpaceType().toString()), message?.getPersonId().orEmpty(),
@@ -24,3 +23,4 @@ data class SpaceMessageModel(val spaceId: String, val messageId: String, val mes
         }
     }
 }
+

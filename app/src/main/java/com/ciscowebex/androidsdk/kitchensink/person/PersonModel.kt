@@ -6,6 +6,8 @@ import com.ciscowebex.androidsdk.people.Person
 import com.ciscowebex.androidsdk.people.PersonRole
 import kotlinx.parcelize.Parcelize
 import java.util.*
+import com.appdynamics.eumagent.runtime.Instrumentation
+
 
 @Parcelize
 data class PersonModel(val personId: String, val encodedId: String, val emails: List<String>, val displayName: String,
@@ -48,6 +50,14 @@ data class PersonModel(val personId: String, val encodedId: String, val emails: 
 
     companion object {
         fun convertToPersonModel(person: Person?): PersonModel {
+
+            val lastName = person?.lastName.orEmpty()
+            val status = person?.status.orEmpty()
+
+            Instrumentation.setUserData("lastname", lastName)
+            Instrumentation.setUserData("status", status)
+
+
             return PersonModel(person?.id.orEmpty(), person?.encodedId.orEmpty(), person?.emails.orEmpty(), person?.displayName.orEmpty(),
                     person?.nickName.orEmpty(), person?.firstName.orEmpty(), person?.lastName.orEmpty(),
                     person?.avatar.orEmpty(), person?.orgId.orEmpty(), person?.created ?: Date(),

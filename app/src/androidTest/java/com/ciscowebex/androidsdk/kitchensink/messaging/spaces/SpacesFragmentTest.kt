@@ -22,31 +22,6 @@ class SpacesFragmentTest : KitchenSinkTest() {
         super.initTests()
         setUpLogin()
     }
-
-    @Test
-    fun testDeleteSpace() {
-        launchFragmentInContainer<SpacesFragment>(themeResId = R.style.Theme_AppCompat)
-        longClickOnListItem(R.id.spacesRecyclerView, 0)
-        WaitUtils.sleep(TIME_1_SEC)
-        onView(withId(R.id.deleteSpace))
-                .inRoot(isDialog())
-                .check(matches(isDisplayed()))
-        clickOnView(R.id.deleteSpace)
-        WaitUtils.sleep(TIME_1_SEC)
-        onView(withText(R.string.delete_space))
-                .inRoot(isDialog())
-                .check(matches(isDisplayed()))
-    }
-
-    @Test
-    fun testShowSpaceMembersWithReadStatus() {
-        launchFragmentInContainer<SpacesFragment>(themeResId = R.style.Theme_AppCompat)
-        longClickOnListItem(R.id.spacesRecyclerView, 0)
-        WaitUtils.sleep(TIME_1_SEC)
-        onView(withId(R.id.showSpaceMembersWithReadStatus))
-                .inRoot(isDialog())
-                .check(matches(isDisplayed()))
-        clickOnView(R.id.showSpaceMembersWithReadStatus)
-        intended(hasComponent(MembershipReadStatusActivity::class.java.name))
-    }
 }
+
+

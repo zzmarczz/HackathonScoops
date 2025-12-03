@@ -23,6 +23,9 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 import org.koin.core.context.unloadKoinModules
+import com.appdynamics.eumagent.runtime.Instrumentation
+import com.appdynamics.eumagent.runtime.AgentConfiguration
+
 
 
 class KitchenSinkApp : Application(), LifecycleObserver {
@@ -50,6 +53,19 @@ class KitchenSinkApp : Application(), LifecycleObserver {
     }
 
     override fun onCreate() {
+
+        Instrumentation.start("AD-AAB-ADZ-STZ", getApplicationContext());
+
+        Instrumentation.start(AgentConfiguration.builder()
+            .withAppKey("AD-AAB-ADZ-STZ")
+            .withContext(getApplicationContext())
+            .withLoggingEnabled(true)
+            .withLoggingLevel(Instrumentation.LOGGING_LEVEL_VERBOSE)
+            .withCollectorURL("https://col.eum-appdynamics.com")
+            .withScreenshotURL("https://image.eum-appdynamics.com")
+            .build());
+
+
         super.onCreate()
         FirebaseApp.initializeApp(this) // Initialize Firebase
 
