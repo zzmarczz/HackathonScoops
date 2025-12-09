@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    
+    <!-- Ice cream scoop -->
+    <path
+        android:fillColor="#FFB6C1"
+        android:pathData="M32,8c11,0 20,9 20,20c0,8 -6,14 -14,14h-12c-8,0 -14,-6 -14,-14c0,-11 9,-20 20,-20z"/>
+    
+    <!-- Cone -->
+    <path
+        android:fillColor="#DEB887"
+        android:pathData="M20,40l12,22l12,-22z"/>
+    
+    <!-- Cone pattern -->
+    <path
+        android:strokeColor="#C4A35A"
+        android:strokeWidth="1"
+        android:pathData="M22,42l10,18M26,42l6,12M30,42l2,6M34,42l-2,6M38,42l-6,12M42,42l-10,18"/>
+    
+    <!-- Highlight on scoop -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.4"
+        android:pathData="M24,16c4,-4 12,-4 16,0c-2,-6 -14,-6 -16,0z"/>
+</vector>
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Main card shape with soft cream background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/icecream_surface"/>
+            <corners android:radius="24dp"/>
+            <stroke
+                android:width="2dp"
+                android:color="@color/icecream_sand"/>
+        </shape>
+    </item>
+</layer-list>
+
+

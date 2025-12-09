@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardIceCream"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/icecream_surface"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/icecream_sand">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Cozy Flavor Color Banner -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/viewFlavorColor"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                tools:background="@color/icecream_vanilla"/>
+
+            <!-- Decorative leaf corner -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🍃"
+                android:textSize="14sp"
+                android:layout_gravity="end"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="12dp"/>
+
+        </FrameLayout>
+
+        <!-- Ice Cream Display Area -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/icecream_sky_light">
+
+            <!-- Decorative background pattern -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="top"
+                android:paddingTop="4dp"
+                android:alpha="0.4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✦"
+                    android:textSize="8sp"
+                    android:textColor="@color/icecream_primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✦"
+                    android:textSize="6sp"
+                    android:textColor="@color/icecream_accent"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✦"
+                    android:textSize="7sp"
+                    android:textColor="@color/icecream_primary"
+                    android:layout_marginStart="25dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgIceCream"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                tools:src="@drawable/ic_icecream_default"
+                android:contentDescription="@string/ice_cream_image"/>
+
+        </FrameLayout>
+
+        <!-- Content Area -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/icecream_surface">
+
+            <!-- Flavor Name with decorative dots -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="•"
+                    android:textColor="@color/icecream_primary"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/txtFlavorName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/icecream_text_warm"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginHorizontal="8dp"
+                    tools:text="Vanilla Dream"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="•"
+                    android:textColor="@color/icecream_primary"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtFlavorDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/icecream_text_secondary"
+                android:textSize="12sp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                tools:text="Classic Madagascar vanilla bean ice cream"/>
+
+            <!-- Price and Add Button Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp">
+
+                <!-- Price -->
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/icecream_accent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="$4.99"/>
+
+                <!-- Cozy Add Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddToCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="+ Add"
+                    android:textSize="12sp"
+                    android:textColor="@color/icecream_text_light"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="16dp"
+                    app:backgroundTint="@color/icecream_accent"
+                    app:cornerRadius="18dp"
+                    style="@style/Widget.MaterialComponents.Button"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

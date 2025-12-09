@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    
+    <!-- Ice cream scoop - Milk Chocolate color -->
+    <path
+        android:fillColor="#8B4513"
+        android:pathData="M32,8c11,0 20,9 20,20c0,8 -6,14 -14,14h-12c-8,0 -14,-6 -14,-14c0,-11 9,-20 20,-20z"/>
+    
+    <!-- Cocoa swirls -->
+    <path
+        android:fillColor="#5D3A1A"
+        android:pathData="M20,16c6,2 12,-1 18,2s6,6 10,4c-2,6 -6,2 -12,5s-12,-1 -18,1c2,-4 6,-8 2,-12z"/>
+    <path
+        android:fillColor="#5D3A1A"
+        android:pathData="M26,28c4,1 8,-1 12,1s4,4 7,3c-1,4 -4,1 -8,3s-8,-1 -12,0c1,-3 4,-5 1,-7z"/>
+    
+    <!-- Chocolate chips -->
+    <path
+        android:fillColor="#2D1810"
+        android:pathData="M24,14c2,0 4,2 4,4s-2,4 -4,4s-4,-2 -4,-4s2,-4 4,-4z"/>
+    <path
+        android:fillColor="#2D1810"
+        android:pathData="M40,16c2,0 4,2 4,4s-2,4 -4,4s-4,-2 -4,-4s2,-4 4,-4z"/>
+    <path
+        android:fillColor="#2D1810"
+        android:pathData="M32,24c2,0 4,2 4,4s-2,4 -4,4s-4,-2 -4,-4s2,-4 4,-4z"/>
+    <path
+        android:fillColor="#2D1810"
+        android:pathData="M22,28c1.5,0 3,1.5 3,3s-1.5,3 -3,3s-3,-1.5 -3,-3s1.5,-3 3,-3z"/>
+    <path
+        android:fillColor="#2D1810"
+        android:pathData="M42,26c1.5,0 3,1.5 3,3s-1.5,3 -3,3s-3,-1.5 -3,-3s1.5,-3 3,-3z"/>
+    
+    <!-- Cone -->
+    <path
+        android:fillColor="#DEB887"
+        android:pathData="M20,40l12,22l12,-22z"/>
+    
+    <!-- Cone pattern -->
+    <path
+        android:strokeColor="#C4A35A"
+        android:strokeWidth="1"
+        android:pathData="M22,42l10,18M26,42l6,12M30,42l2,6M34,42l-2,6M38,42l-6,12M42,42l-10,18"/>
+    
+    <!-- Highlight on scoop -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.2"
+        android:pathData="M24,16c4,-4 12,-4 16,0c-2,-6 -14,-6 -16,0z"/>
+</vector>
+
+

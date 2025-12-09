@@ -1,26 +1,13 @@
-import com.ciscowebex.androidsdk.build.*
+import com.icecream.demo.build.*
 
 apply plugin: 'com.android.application'
 apply plugin: 'adeum'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.gms.google-services'  // Google Services plugin
-apply plugin: 'com.google.firebase.crashlytics' // Crashlytics Gradle plugin
 
-
-
-def CLIENT_ID='""'
-def CLIENT_SECRET='""'
-def REDIRECT_URI='""'
-def FEDRAMP_CLIENT_ID='""'
-def FEDRAMP_CLIENT_SECRET='""'
-def FEDRAMP_REDIRECT_URI='""'
-def WEBHOOK_URL='""'
 
 android {
     compileSdk Versions.compileSdk
-    ndkVersion Versions.ndkVersion
 
     compileOptions {
         sourceCompatibility Versions.jvmVersion
@@ -30,48 +17,15 @@ android {
     kotlinOptions {
         jvmTarget = Versions.jvmTarget
     }
+
     defaultConfig {
-        applicationId "com.cisco.sdk_android"
+        applicationId "com.icecream.demo"
         minSdkVersion Versions.minSdk
         targetSdkVersion Versions.targetSdk
-        versionCode 3160000
-        versionName "3.16.0"
-        multiDexEnabled true
+        versionCode 1
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        Properties properties = new Properties()
-        if (project.rootProject.file('local.properties').canRead()) {
-            properties.load(project.rootProject.file("local.properties").newDataInputStream())
-
-            //All the values will be read from local.properties file
-            CLIENT_ID = properties.getProperty('CLIENT_ID', '""')
-            CLIENT_SECRET = properties.getProperty('CLIENT_SECRET', '""')
-            REDIRECT_URI = properties.getProperty('REDIRECT_URI', '" "')
-            FEDRAMP_CLIENT_ID = properties.getProperty('FEDRAMP_CLIENT_ID', '""')
-            FEDRAMP_CLIENT_SECRET = properties.getProperty('FEDRAMP_CLIENT_SECRET', '""')
-            FEDRAMP_REDIRECT_URI = properties.getProperty('FEDRAMP_REDIRECT_URI','""')
-            WEBHOOK_URL = properties.getProperty('WEBHOOK_URL', '""')
-        }
-
-        buildConfigField "String", "CLIENT_ID", "${CLIENT_ID}"
-        buildConfigField "String", "CLIENT_SECRET", "${CLIENT_SECRET}"
-        buildConfigField "String", "REDIRECT_URI", "${REDIRECT_URI}"
-        buildConfigField "String", "FEDRAMP_CLIENT_ID", "${FEDRAMP_CLIENT_ID}"
-        buildConfigField "String", "FEDRAMP_CLIENT_SECRET", "${FEDRAMP_CLIENT_SECRET}"
-        buildConfigField "String", "FEDRAMP_REDIRECT_URI", "${FEDRAMP_REDIRECT_URI}"
-        buildConfigField "String", "WEBHOOK_URL", "${WEBHOOK_URL}"
-
-        // SCOPE value is from Gradle.prop
-        buildConfigField "String", "SCOPE", "${SCOPE}"
-    }
-
-    packagingOptions {
-        exclude 'META-INF/rxjava.properties'
-        jniLibs {
-            pickFirsts += ['lib/armeabi-v7a/libc++_shared.so', 'lib/arm64-v8a/libc++_shared.so', 'lib/x86/libc++_shared.so', 'lib/x86_64/libc++_shared.so']
-            useLegacyPackaging true
-        }
     }
 
     buildTypes {
@@ -86,101 +40,38 @@ android {
     }
 
     buildFeatures {
-        dataBinding true
         buildConfig = true
     }
-    splits {
-        // Configures multiple APKs based on ABI.
-        abi {
-            // Enables building multiple APKs per ABI.
-            enable true
 
-            // By default all ABIs are included, so use reset() and include to specify that we only
-            // want APKs for x86, armeabi-v7a, and mips.
-            reset()
-
-            // Specifies a list of ABIs that Gradle should create APKs for.
-            include "x86", "x86_64", "armeabi-v7a", "arm64-v8a"
-
-            // Specifies that we want to also generate a universal APK that includes all ABIs.
-            universalApk false
-        }
-    }
-    flavorDimensions 'sdktype'
-    productFlavors {
-        full {
-            dimension 'sdktype'
-            matchingFallbacks = ["full"]
-        }
-        meeting {
-            dimension 'sdktype'
-            versionNameSuffix '-meeting'
-            matchingFallbacks = ["meeting"]
-        }
-        wxc {
-            dimension 'sdktype'
-            versionNameSuffix '-wxc'
-            matchingFallbacks = ["wxc"]
-        }
-        message {
-            dimension 'sdktype'
-            versionNameSuffix '-message'
-            matchingFallbacks = ["message"]
-        }
-    }
-    namespace 'com.ciscowebex.androidsdk.kitchensink'
+    namespace 'com.icecream.demo'
 }
 
 dependencies {
-    //At a time only one WebexSDK should be used.
 
-    implementation 'com.appdynamics:appdynamics-runtime:25.9.0'
-    implementation 'com.ciscowebex:webexsdk:3.16.0' // For full flavor
-    //implementation 'com.ciscowebex:webexsdk-wxc:3.16.0' //For webexCalling flavor
-    //implementation 'com.ciscowebex:webexsdk-meeting:3.16.0' // For meeting flavor
-    //implementation 'com.ciscowebex:webexsdk-message:3.16.0' // For meeting flavor
-    //implementation files('libs/WebexSDK-Wxc.aar')
-    //implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // AndroidX Core
     implementation Dependencies.coreKtx
     implementation Dependencies.appCompat
     implementation Dependencies.constraintLayout
     implementation Dependencies.material
     implementation Dependencies.recyclerview
     implementation Dependencies.cardview
-    implementation Dependencies.viewpager2
-    implementation Dependencies.koin
-    implementation Dependencies.koinViewModel
-    implementation Dependencies.swiperefresh
-    implementation Dependencies.media
-    implementation Dependencies.nimbusJosh
 
-    // RXJAVA
-    implementation Dependencies.rxjava
-    implementation Dependencies.rxandroid
-    implementation Dependencies.rxkotlin
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-process:2.6.2'
+    implementation 'com.appdynamics:appdynamics-runtime:25.9.0'
+    implementation 'com.cisco.android:sr-instrumentation-session-recording-core:1.0.12'
 
+    // Network
+    implementation Dependencies.okhttp
+    implementation Dependencies.gson
+
+
+    // Testing
     testImplementation Dependencies.Test.junit
     androidTestImplementation Dependencies.Test.androidxJunit
     androidTestImplementation Dependencies.Test.espressoCore
-    androidTestImplementation Dependencies.Test.espressoContrib
-    androidTestImplementation Dependencies.Test.espressoWeb
-    androidTestImplementation Dependencies.Test.espressoIntents
-    androidTestImplementation Dependencies.Test.rules
-    androidTestImplementation Dependencies.Test.testExt
-    debugImplementation (Dependencies.Test.fragmentScenerio) {
-        exclude group: 'androidx.test', module: 'monitor'
-    }
-    implementation platform(Dependencies.firebaseBom)
-    implementation Dependencies.firebaseMessaging
-    implementation Dependencies.firebaseAnalytics
-    implementation Dependencies.firebaseCrashlytics
-    implementation Dependencies.gson
-    implementation Dependencies.glide
-    implementation 'com.orhanobut:logger:2.2.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
-    implementation 'com.squareup.okio:okio:3.2.0'
-
-
 }
 
 adeum { // this section added for AppDynamics

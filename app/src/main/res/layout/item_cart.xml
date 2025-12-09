@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardCartItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/icecream_surface"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/icecream_sand">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:gravity="center_vertical">
+
+        <!-- Flavor Color Indicator (Rounded) -->
+        <View
+            android:id="@+id/viewItemColor"
+            android:layout_width="8dp"
+            android:layout_height="72dp"
+            tools:background="@color/icecream_vanilla"/>
+
+        <!-- Ice Cream Image with Cozy Background -->
+        <FrameLayout
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/circle_background">
+
+            <ImageView
+                android:id="@+id/imgCartItem"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                tools:src="@drawable/ic_icecream_default"
+                android:contentDescription="@string/ice_cream_image"/>
+
+        </FrameLayout>
+
+        <!-- Item Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="14dp">
+
+            <TextView
+                android:id="@+id/txtCartItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/icecream_text_warm"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Vanilla Dream"/>
+
+            <TextView
+                android:id="@+id/txtCartItemPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/icecream_text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="2dp"
+                tools:text="💰 $4.99 each"/>
+
+            <!-- Cozy Quantity Controls -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/quantity_background"
+                android:padding="4dp">
+
+                <ImageButton
+                    android:id="@+id/btnDecrease"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_minus"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/decrease_quantity"
+                    app:tint="@color/icecream_primary"/>
+
+                <TextView
+                    android:id="@+id/txtQuantity"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/icecream_text_warm"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    tools:text="2"/>
+
+                <ImageButton
+                    android:id="@+id/btnIncrease"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_plus"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/increase_quantity"
+                    app:tint="@color/icecream_primary"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Price and Remove -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/btnRemove"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_delete"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/remove_item"
+                app:tint="@color/icecream_error"/>
+
+            <!-- Total Price Badge -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/cozy_leaf_badge"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:layout_marginTop="14dp">
+
+                <TextView
+                    android:id="@+id/txtItemTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/icecream_leaf_dark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="$9.98"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

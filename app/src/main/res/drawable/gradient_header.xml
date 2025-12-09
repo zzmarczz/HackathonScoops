@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sky gradient background -->
+    <item>
+        <shape>
+            <gradient
+                android:type="linear"
+                android:startColor="@color/icecream_header_start"
+                android:centerColor="@color/icecream_sky_blue"
+                android:endColor="@color/icecream_sky_light"
+                android:angle="270"/>
+        </shape>
+    </item>
+</layer-list>

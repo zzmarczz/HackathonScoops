@@ -1,53 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="lightYellow">#F2A62C</color>
-    <color name="yellow50">#D67F04</color>
-    <color name="lightGreen">#44CF50</color>
-    <color name="green">#24AB31</color>
-    <color name="blue">#1DC4F2</color>
-    <color name="red">#FF5C4A</color>
-    <color name="lightGray">#F2F4F5</color>
-    <color name="black">#000</color>
-    <color name="gray90">#24282B</color>
-    <color name="gray60">#737678</color>
-    <color name="alphaWhite">#90FFFFFF</color>
-    <color name="white">#FFFFFF</color>
-
-    <color name="transparent">#00000000</color>
-    <!--Red colors-->
-    <color name="red_50">#F7644A</color>
-    <color name="red_60">#D4371C</color>
-
-    <!--Gray colors-->
-    <color name="gray_40">#B2B2B2</color>
-    <color name="gray_50">#949494</color>
-    <color name="gray_60">#707070</color>
-    <color name="gray_70">#545454</color>
-    <color name="gray_80">#3B3B3B</color>
-
-    <!-- Negative Colors -->
-    <color name="negative_base">@color/red_50</color>
-    <color name="negative_base_pressed">@color/red_60</color>
-    <color name="negative_shade">@color/red_60</color>
-
-    <color name="blue_40">#07C1F5</color>
-    <color name="primary_base">@color/blue_40</color>
-
-    <!-- Presence related colors -->
-    <color name="green_60">#1D805F</color>
-    <color name="orange_60">#C74F0E</color>
-    <color name="presence_icon_active">@color/green_60</color>
-    <color name="presence_icon_inactive">@color/gray_70</color>
-    <color name="presence_icon_dnd">@color/red_60</color>
-    <color name="presence_icon_quiet_hours">@color/gray_70</color>
-    <color name="presence_icon_busy">@color/red_60</color>
-    <color name="presence_icon_ooo">@color/gray_70</color>
-    <color name="presence_icon_meeting">@color/orange_60</color>
-    <color name="presence_icon_call">@color/orange_60</color>
-    <color name="presence_icon_schedule">@color/orange_60</color>
-    <color name="presence_icon_presenting">@color/red_60</color>
-    <color name="presence_icon_away">@color/gray_70</color>
+    <!-- 🌴 Animal Crossing Cozy Island Theme 🍃 -->
+    
+    <!-- Primary Colors - Nook's Cranny Green -->
+    <color name="icecream_primary">#7FBBB3</color>
+    <color name="icecream_primary_dark">#5B9A91</color>
+    <color name="icecream_primary_light">#B8E0DB</color>
+    
+    <!-- Accent - Warm Bell Coin Gold/Coral -->
+    <color name="icecream_accent">#E8A87C</color>
+    <color name="icecream_accent_dark">#D4926B</color>
+    
+    <!-- Backgrounds - Warm Cream & Sand -->
+    <color name="icecream_background">#FDF6E3</color>
+    <color name="icecream_card_bg">#FFF9EE</color>
+    <color name="icecream_surface">#FFFBF5</color>
+    <color name="icecream_sand">#F5E6D3</color>
+    
+    <!-- Sky Colors -->
+    <color name="icecream_sky_light">#E8F4F8</color>
+    <color name="icecream_sky_blue">#A8D8EA</color>
+    <color name="icecream_cloud">#FFFFFF</color>
+    
+    <!-- Nature Colors -->
+    <color name="icecream_leaf_green">#8BC34A</color>
+    <color name="icecream_leaf_dark">#689F38</color>
+    <color name="icecream_grass">#C5E1A5</color>
+    <color name="icecream_wood">#A1887F</color>
+    <color name="icecream_wood_dark">#8D6E63</color>
+    
+    <!-- Text Colors - Warm & Friendly -->
+    <color name="icecream_text_dark">#4A4A4A</color>
+    <color name="icecream_text_secondary">#7A7A7A</color>
+    <color name="icecream_text_light">#FFFFFF</color>
+    <color name="icecream_text_warm">#5D4E37</color>
+    
+    <!-- UI Elements -->
+    <color name="icecream_divider">#E5DDD0</color>
+    <color name="icecream_error">#E57373</color>
+    <color name="icecream_success">#81C784</color>
+    <color name="icecream_success_bg">#E8F5E9</color>
+    
+    <!-- Cozy Button Colors -->
+    <color name="icecream_button_primary">#7FBBB3</color>
+    <color name="icecream_button_secondary">#E8A87C</color>
+    <color name="icecream_button_happy">#F5B7B1</color>
+    
+    <!-- Flavor Colors (Pastel & Cozy) -->
+    <color name="icecream_vanilla">#FFF8DC</color>
+    <color name="icecream_chocolate">#A1887F</color>
+    <color name="icecream_strawberry">#F8BBD9</color>
+    <color name="icecream_mint">#B2DFDB</color>
+    <color name="icecream_caramel">#FFD699</color>
+    
+    <!-- Gradient Colors - Sunset/Dawn Vibes -->
+    <color name="icecream_gradient_start">#A8D8EA</color>
+    <color name="icecream_gradient_middle">#E8F4F8</color>
+    <color name="icecream_gradient_end">#FDF6E3</color>
+    
+    <!-- Header Gradient -->
+    <color name="icecream_header_start">#7FBBB3</color>
+    <color name="icecream_header_end">#A8D8EA</color>
+    
+    <!-- Decorative Accents -->
+    <color name="icecream_flower_pink">#FFB7C5</color>
+    <color name="icecream_flower_yellow">#FFE082</color>
+    <color name="icecream_star">#FFD54F</color>
+    
+    <!-- Legacy color references (for compatibility) -->
+    <color name="colorPrimary">@color/icecream_primary</color>
+    <color name="colorPrimaryDark">@color/icecream_primary_dark</color>
+    <color name="colorAccent">@color/icecream_accent</color>
 </resources>
