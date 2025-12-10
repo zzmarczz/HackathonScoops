@@ -2,6 +2,12 @@
 
 A simple Android demo application for an ice cream shop. This app demonstrates a typical e-commerce flow with product browsing, shopping cart, and checkout functionality.
 
+## Screenshot
+
+<p align="center">
+  <img src="images/screenshot_home.png" width="300" alt="Ice Cream Shop Home Screen"/>
+</p>
+
 ## Features
 
 - 🍦 Browse ice cream flavors in a beautiful grid layout
