@@ -1,4 +1,4 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream.model
+package com.icecream.demo.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

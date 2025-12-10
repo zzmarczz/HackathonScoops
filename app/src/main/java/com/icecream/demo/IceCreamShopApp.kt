@@ -1,4 +1,4 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream
+package com.icecream.demo
 
 import android.app.Application
 import android.content.Context
@@ -45,3 +45,4 @@ class IceCreamShopApp : Application(), LifecycleObserver {
         inForeground = false
     }
 }
+

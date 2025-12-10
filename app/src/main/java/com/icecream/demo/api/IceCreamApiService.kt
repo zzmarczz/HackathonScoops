@@ -1,7 +1,7 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream.api
+package com.icecream.demo.api
 
-import com.ciscowebex.androidsdk.kitchensink.icecream.model.CartItem
-import com.ciscowebex.androidsdk.kitchensink.icecream.model.IceCream
+import com.icecream.demo.model.CartItem
+import com.icecream.demo.model.IceCream
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.*
@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit
 
 /**
  * API Service for Ice Cream Shop network operations.
- * Uses real HTTP calls that AppDynamics can capture.
  */
 object IceCreamApiService {
 
@@ -51,7 +50,6 @@ object IceCreamApiService {
                 response.use {
                     if (response.isSuccessful) {
                         // httpbin returns our request info, we'll use local data
-                        // but the network call is real and will be captured by AppDynamics
                         val flavors = IceCream.getSampleFlavors()
                         callback(Result.success(flavors))
                     } else {
@@ -280,5 +278,4 @@ object IceCreamApiService {
         val updatedAt: Long
     )
 }
-
 

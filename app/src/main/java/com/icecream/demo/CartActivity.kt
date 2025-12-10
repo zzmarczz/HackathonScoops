@@ -1,4 +1,4 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream
+package com.icecream.demo
 
 import android.content.Intent
 import android.graphics.Color
@@ -13,9 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.icecream.demo.R
-import com.ciscowebex.androidsdk.kitchensink.icecream.api.IceCreamApiService
-import com.ciscowebex.androidsdk.kitchensink.icecream.model.CartItem
+import com.icecream.demo.api.IceCreamApiService
+import com.icecream.demo.model.CartItem
 import com.google.android.material.button.MaterialButton
 
 /**
@@ -237,3 +236,4 @@ class CartActivity : AppCompatActivity() {
         override fun getItemCount() = items.size
     }
 }
+

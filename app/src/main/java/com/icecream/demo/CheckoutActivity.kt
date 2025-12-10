@@ -1,4 +1,4 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream
+package com.icecream.demo
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,11 +6,9 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.icecream.demo.R
-import com.ciscowebex.androidsdk.kitchensink.icecream.api.IceCreamApiService
+import com.icecream.demo.api.IceCreamApiService
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
-import com.appdynamics.eumagent.runtime.Instrumentation
 
 /**
  * Checkout Activity for completing the order.
@@ -100,13 +98,8 @@ class CheckoutActivity : AppCompatActivity() {
         val customerEmail = etEmail.text.toString()
         val shippingAddress = etAddress.text.toString()
 
-        Instrumentation.setUserData("CustomerName", customerName)
 
 
-
-        // Report total ice cream count as a metric
-        val totalIceCreams = items.sumOf { it.quantity }
-        Instrumentation.reportMetric("Ice Cream Order Count", totalIceCreams.toLong())
 
 
         IceCreamApiService.submitOrder(
@@ -199,3 +192,4 @@ class CheckoutActivity : AppCompatActivity() {
         return true
     }
 }
+

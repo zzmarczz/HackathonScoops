@@ -1,4 +1,4 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream
+package com.icecream.demo
 
 import android.content.Intent
 import android.graphics.Color
@@ -16,13 +16,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.icecream.demo.R
-import com.ciscowebex.androidsdk.kitchensink.icecream.api.IceCreamApiService
-import com.ciscowebex.androidsdk.kitchensink.icecream.model.IceCream
+import com.icecream.demo.api.IceCreamApiService
+import com.icecream.demo.model.IceCream
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import com.appdynamics.eumagent.runtime.Instrumentation
-import com.appdynamics.eumagent.runtime.AgentConfiguration
 
 
 /**
@@ -37,14 +34,7 @@ class IceCreamMainActivity : AppCompatActivity() {
     private lateinit var errorView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Instrumentation.start(AgentConfiguration.builder()
-            .withAppKey("AD-AAB-ADZ-VWY")
-            .withContext(getApplicationContext())
-            .withCollectorURL("https://col.eum-appdynamics.com")
-            .withScreenshotURL("https://image.eum-appdynamics.com")
-            .withSessionReplayEnabled(true)
-            .withBlobServiceURL("https://blob-service.eum-appdynamics.com")
-            .build());
+
         super.onCreate(savedInstanceState)
         
         setContentView(R.layout.activity_icecream_main)
@@ -98,7 +88,6 @@ class IceCreamMainActivity : AppCompatActivity() {
         IceCreamApiService.checkInventory(ids) { result ->
             runOnUiThread {
                 result.onSuccess { inventory ->
-                    // Log inventory status (network call captured by AppDynamics)
                     android.util.Log.d("IceCreamShop", "Inventory check: $inventory")
                 }.onFailure { error ->
                     android.util.Log.e("IceCreamShop", "Inventory check failed: ${error.message}")
@@ -277,3 +266,4 @@ class IceCreamMainActivity : AppCompatActivity() {
         override fun getItemCount() = flavors.size
     }
 }
+

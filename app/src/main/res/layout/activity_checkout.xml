@@ -216,7 +216,7 @@
                                 android:id="@+id/etName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Villager Name 🧑"
+                                android:hint="Name"
                                 android:inputType="textPersonName"
                                 android:textColor="@color/icecream_text_dark"/>
 
@@ -238,7 +238,7 @@
                                 android:id="@+id/etEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Nook Phone Email 📧"
+                                android:hint="Email"
                                 android:inputType="textEmailAddress"
                                 android:textColor="@color/icecream_text_dark"/>
 
@@ -260,7 +260,7 @@
                                 android:id="@+id/etAddress"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Island Address 🏝️"
+                                android:hint="Address"
                                 android:inputType="textPostalAddress"
                                 android:minLines="2"
                                 android:textColor="@color/icecream_text_dark"/>
@@ -334,7 +334,7 @@
                                 android:id="@+id/etCardNumber"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Nook Card Number"
+                                android:hint="Card Number"
                                 android:inputType="number"
                                 android:maxLength="16"
                                 android:textColor="@color/icecream_text_dark"/>

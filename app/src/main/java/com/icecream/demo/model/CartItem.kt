@@ -1,4 +1,4 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream.model
+package com.icecream.demo.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -12,5 +12,4 @@ data class CartItem(
     val totalPrice: Double
         get() = iceCream.price * quantity
 }
-
 

@@ -1,9 +1,9 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream
+package com.icecream.demo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ciscowebex.androidsdk.kitchensink.icecream.model.CartItem
-import com.ciscowebex.androidsdk.kitchensink.icecream.model.IceCream
+import com.icecream.demo.model.CartItem
+import com.icecream.demo.model.IceCream
 
 /**
  * Singleton CartManager to manage shopping cart state.
@@ -82,3 +82,4 @@ object CartManager {
         _cartTotal.value = items.sumOf { it.totalPrice }
     }
 }
+

@@ -1,4 +1,4 @@
-package com.ciscowebex.androidsdk.kitchensink.icecream
+package com.icecream.demo
 
 import android.app.Activity
 import android.content.Context
@@ -9,15 +9,13 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
-import com.ciscowebex.androidsdk.kitchensink.icecream.model.IceCream
+import com.icecream.demo.model.IceCream
 import com.google.android.material.button.MaterialButton
-import com.icecream.demo.R
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.random.Random
 
 /**
- * Simulates user sessions for AppDynamics Session Replay capture.
- * Creates short, realistic user journeys through the ice cream shop.
+ * Simulates user sessions with realistic user journeys through the ice cream shop.
  */
 object SessionSimulator {
 
@@ -369,5 +367,4 @@ object SessionSimulator {
      */
     fun isSimulationRunning(): Boolean = isRunning.get()
 }
-
 

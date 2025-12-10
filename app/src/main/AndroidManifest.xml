@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.ciscowebex.androidsdk.kitchensink.icecream.IceCreamShopApp"
+        android:name="com.icecream.demo.IceCreamShopApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/icecream_app_name"
@@ -16,7 +16,7 @@
 
         <!-- Ice Cream Shop Activities -->
         <activity
-            android:name="com.ciscowebex.androidsdk.kitchensink.icecream.IceCreamMainActivity"
+            android:name="com.icecream.demo.IceCreamMainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.IceCreamShop.ActionBar">
@@ -27,16 +27,16 @@
         </activity>
         
         <activity
-            android:name="com.ciscowebex.androidsdk.kitchensink.icecream.CartActivity"
+            android:name="com.icecream.demo.CartActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.IceCreamShop.ActionBar"
-            android:parentActivityName="com.ciscowebex.androidsdk.kitchensink.icecream.IceCreamMainActivity" />
+            android:parentActivityName="com.icecream.demo.IceCreamMainActivity" />
             
         <activity
-            android:name="com.ciscowebex.androidsdk.kitchensink.icecream.CheckoutActivity"
+            android:name="com.icecream.demo.CheckoutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.IceCreamShop.ActionBar"
-            android:parentActivityName="com.ciscowebex.androidsdk.kitchensink.icecream.CartActivity" />
+            android:parentActivityName="com.icecream.demo.CartActivity" />
 
     </application>
 
