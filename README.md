@@ -13,7 +13,6 @@ A simple Android demo application for an ice cream shop. This app demonstrates a
 - 🍦 Browse ice cream flavors in a beautiful grid layout
 - 🛒 Add items to shopping cart
 - 💳 Complete checkout with order submission
-- 🤖 Built-in session simulation for testing
 
 ## Requirements
 
@@ -40,7 +39,6 @@ app/src/main/java/com/icecream/demo/
 ├── CartActivity.kt              # Shopping cart screen
 ├── CheckoutActivity.kt          # Checkout flow
 ├── CartManager.kt               # Cart state management
-├── SessionSimulator.kt          # Testing utility
 └── IceCreamShopApp.kt           # Application class
 ```
 

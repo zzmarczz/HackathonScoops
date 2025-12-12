@@ -8,14 +8,4 @@
         android:title="@string/cart"
         app:showAsAction="always"/>
 
-    <item
-        android:id="@+id/action_simulate"
-        android:title="Simulate Sessions"
-        app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/action_simulate_multiple"
-        android:title="Run 5 Sessions"
-        app:showAsAction="never"/>
-
 </menu>

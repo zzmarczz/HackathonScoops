@@ -148,55 +148,8 @@ class IceCreamMainActivity : AppCompatActivity() {
                 startActivity(Intent(this, CartActivity::class.java))
                 true
             }
-            R.id.action_simulate -> {
-                startSimulatedSession()
-                true
-            }
-            R.id.action_simulate_multiple -> {
-                startMultipleSimulatedSessions()
-                true
-            }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun startSimulatedSession() {
-        if (SessionSimulator.isSimulationRunning()) {
-            Toast.makeText(this, "Simulation already running...", Toast.LENGTH_SHORT).show()
-            return
-        }
-        
-        Toast.makeText(this, "🤖 Starting simulated session...", Toast.LENGTH_SHORT).show()
-        
-        SessionSimulator.startSession(this) {
-            runOnUiThread {
-                Toast.makeText(this, "✅ Session completed!", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun startMultipleSimulatedSessions() {
-        if (SessionSimulator.isSimulationRunning()) {
-            Toast.makeText(this, "Simulation already running...", Toast.LENGTH_SHORT).show()
-            return
-        }
-        
-        Toast.makeText(this, "🤖 Starting 5 simulated sessions...", Toast.LENGTH_LONG).show()
-        
-        SessionSimulator.startMultipleSessions(
-            activity = this,
-            count = 5,
-            delayBetweenSessions = 3000L
-        ) {
-            runOnUiThread {
-                Toast.makeText(this, "✅ All sessions completed!", Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        SessionSimulator.stop()
     }
 
     /**

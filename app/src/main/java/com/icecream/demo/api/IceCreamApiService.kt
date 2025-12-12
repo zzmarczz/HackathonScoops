@@ -25,9 +25,9 @@ object IceCreamApiService {
         .build()
 
     // Base URLs for API endpoints
-    private const val MENU_API_URL = "https://httpbin.org/anything/api/v1/menu"
-    private const val ORDER_API_URL = "https://httpbin.org/post"
-    private const val INVENTORY_API_URL = "https://httpbin.org/anything/api/v1/inventory"
+    private const val MENU_API_URL = "https://postman-echo.com/get?path=api/v1/menu"
+    private const val ORDER_API_URL = "https://postman-echo.com/post"
+    private const val INVENTORY_API_URL = "https://postman-echo.com/get?path=api/v1/inventory"
 
     /**
      * Fetch ice cream menu from the server.
@@ -49,7 +49,7 @@ object IceCreamApiService {
             override fun onResponse(call: Call, response: Response) {
                 response.use {
                     if (response.isSuccessful) {
-                        // httpbin returns our request info, we'll use local data
+                        // postman-echo returns our request info, we'll use local data
                         val flavors = IceCream.getSampleFlavors()
                         callback(Result.success(flavors))
                     } else {
@@ -166,7 +166,7 @@ object IceCreamApiService {
      * Makes a real HTTP GET request.
      */
     fun validatePromoCode(code: String, callback: (Result<PromoCodeResponse>) -> Unit) {
-        val url = "https://httpbin.org/anything/api/v1/promo/$code"
+        val url = "https://postman-echo.com/get?path=api/v1/promo&code=$code"
         
         val request = Request.Builder()
             .url(url)
@@ -204,7 +204,7 @@ object IceCreamApiService {
      * Makes a real HTTP GET request.
      */
     fun getOrderStatus(orderId: String, callback: (Result<OrderStatusResponse>) -> Unit) {
-        val url = "https://httpbin.org/anything/api/v1/orders/$orderId/status"
+        val url = "https://postman-echo.com/get?path=api/v1/orders/$orderId/status"
         
         val request = Request.Builder()
             .url(url)
